@@ -8,15 +8,11 @@ from collections import defaultdict
 class Solution(object):
     def __init__(self):
         self.count = 0
-        self.nodes = []
-        self.map = defaultdict(lambda:0)
+        self.map = defaultdict(int)
     
     def pathSumUtil(self, node, targetSum, currentSum):
-        if node is None:
-            return
-        else:
-            if self.map[node.val + currentSum - targetSum]:
-                self.count+=self.map[node.val + currentSum - targetSum]
+        if node:
+            self.count+=self.map[node.val + currentSum - targetSum]
             self.map[node.val+currentSum] += 1
             self.pathSumUtil(node.left, targetSum, currentSum + node.val)
             self.pathSumUtil(node.right, targetSum, currentSum + node.val)
