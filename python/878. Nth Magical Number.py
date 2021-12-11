@@ -7,7 +7,7 @@ def lcm(a,b):
 class Solution:
     def nthMagicalNumber(self, n: int, a: int, b: int) -> int:
         MOD = int(10**9+7)
-        lower, upper = 0, n*max(a,b)
+        lower, upper = 0, n*min(a,b)
         ab = lcm(a, b)
         while lower <= upper:
             mid = (lower + upper) // 2
