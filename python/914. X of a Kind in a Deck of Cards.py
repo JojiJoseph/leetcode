@@ -13,7 +13,6 @@ class Solution:
         gcd = hashtable[deck[0]]
         if gcd < 2:
             return False
-        groups = 0
         for key in hashtable:
             gcd = self.gcd(gcd, hashtable[key])
         return gcd >= 2
