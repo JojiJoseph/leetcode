@@ -7,4 +7,6 @@ class Solution:
         win = False
         for i in range(1, lim):
             win = win or not self.winnerSquareGame(n-i*i)
+            if win:
+                return win
         return win
